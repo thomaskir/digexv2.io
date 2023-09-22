@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hate Exhibition</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- always load the CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+    <!-- and then one of either -->
+    <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline/latest/js/timeline.js"></script>
+    <!-- or -->
+    <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline/latest/js/timeline-min.js"></script>
+    <!-- but no need for both -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+        title {
+            display: none;
+        }
+
+        body {
+         background-color:rgb(20, 1, 22);
+         color:rgb(212, 176, 174)       
+        }
+
+        section {
+            display: none;
+            margin: 0;
+            min-height: 30vh;
+            width: 90%;
+        }
+        h1,h2{
+            font-family: 'IBM Plex Mono', monospace;   
+             color:firebrick}
+        h2{
+            margin-bottom: 25px;
+            margin-top: 20px;
+        }
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .backforward-btns{
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 5px;
+            left: 30em;
+            width: 870px;    }
+ 
+
+        .active {
+            display: block;
+        }
+
+        .image {
+            margin: 1em auto;
+            max-width: 300px;
+            display: block;
+
+        }
+
+        .image_modal {
+            width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .container__custom {
+            max-width: 700px;
+        }
+
+        .section1{
+            margin-top: 25%;
+        }
+        audio {
+            margin: 1em;
+        }
+        .external_link{
+            border: 1px solid #cf5935;
+            color: #cf5935;
+            padding: 5px;
+            border-radius: 9px;
+            margin: 5px;
+        }
+
+        .div-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 800px;
+                }
+
+
+
+
+        a:link {
+            color: #cf5935;
+            background-color: transparent;
+            text-decoration: none;
+                }
+
+        a:visited {
+            color: rgb(218, 10, 10);
+            background-color: transparent;
+            text-decoration: none;
+                }
+
+        a:hover {
+            color: rgb(165, 108, 108);
+            background-color: transparent;
+            text-decoration: underline;
+                }
+
+        a:active {
+            color: rgb(189, 119, 62);
+            background-color: transparent;
+            text-decoration: underline;
+                }
+
+
+
+.p  {              
+  font-family: 'IBM Plex Mono', monospace;
+  color: #cecece;
+  background: #222;
+  overflow: hidden;
+}
+
+.item-1, 
+.item-2, 
+.item-3 {
+	position: absolute;
+  display: block;
+	top: 15em;
+  
+  width: 65%;
+  
+  font-size: 1em;
+
+	animation-duration: 85s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8% { left: -100%; opacity: 0; }
+  12%, 30% { left: 32.5%; opacity: 1; }
+  32%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 28% { left: -100%; opacity: 0; }
+  32%, 60% { left: 32.5%; opacity: 1; }
+  68%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 58% { left: -100%; opacity: 0; }
+  65%, 95% { left: 32.5%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+
+
+.item-x1, 
+.item-x2, 
+.item-x3,
+.item-x4,
+.item-x5,
+.item-x6 {
+	position: absolute;
+  display: block;
+	top: 15em;
+  
+  width: 65%;
+  
+  font-size: 1em;
+
+	animation-duration: 40s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-x1{
+	animation-name: anim-x1;
+}
+
+.item-x2{
+	animation-name: anim-x2;
+}
+
+.item-x3{
+	animation-name: anim-x3;
+}
+
+.item-x4{
+	animation-name: anim-x4;
+}
+
+.item-x5{
+	animation-name: anim-x5;
+}
+
+.item-x6{
+	animation-name: anim-x6;
+}
+
+@keyframes anim-x1 {
+	0%, 1% { left: -100%; opacity: 0; }
+  6%, 30% { left: 32.5%; opacity: 1; }
+  40%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-x2 {
+	0%, 18% { left: -100%; opacity: 0; }
+  28%, 40% { left: 32.5%; opacity: 1; }
+  51%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-x3 {
+	0%, 37% { left: -100%; opacity: 0; }
+  48%, 60% { left: 32.5%; opacity: 1; }
+  78%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-x4 {
+	0%, 44% { left: -100%; opacity: 0; }
+  53%, 63% { left: 32.5%; opacity: 1; }
+  78%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-x5 {
+	0%, 50% { left: -100%; opacity: 0; }
+  69%, 87% { left: 32.5%; opacity: 1; }
+  87%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-x6 {
+	0%, 58% { left: -100%; opacity: 0; }
+  79%, 90% { left: 32.5%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container container__custom d-flex  flex-column justify-content-center">
+
+
+        <section class="active">
+            <div class="section1">
+                <p style="font-size: 4.5em; color: firebrick;"><span style="color: rgb(153, 122, 153);">Art</span> Unveiling Hate: A Journey through Creative Expression</p>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Welcome</h2>
+                <p>to "Art Unveiling Hate: A Journey through Creative Expression", a digital exhibition exploring how art confronts hate. Through visual, textual, video, and audio mediums, this immersive experience showcases the transformative power of art in addressing the complexities of hate.
+                    Discover artworks that expose the destructive nature of hate, challenge stereotypes, and evoke empathy. Personal narratives and immersive video installations provide insights into confronting hate, while audio compositions express resilience and hope.
+                    This exhibition celebrates art's ability to amplify marginalized voices, spark dialogue, and inspire activism. Engage fully with the artworks to provoke introspection, ignite conversations, and foster personal and collective transformation.
+                    Join us on this enlightening journey as art unveils the darkness of hate and illuminates paths towards healing and understanding.</p>
+                    
+                  <p><span style="color: rgb(179, 100, 100);">Content Warning:
+                    This online exhibition contains sensitive and potentially distressing material. It discusses topics like discrimination, racism, sexism, homophobia, religious intolerance, and xenophobia. There may also be instances of offensive language used within the context of personal narratives or historical accounts.
+                    Please engage with this exhibition mindfully, considering your emotional well-being. If you find the content overwhelming, take a break or seek support. The purpose of this exhibition is to promote awareness, empathy, and positive change. Remember to approach the topic with respect and a commitment to building a more inclusive society.
+                    If you need immediate assistance or someone to talk to, please refer to the resources provided within the exhibition or seek help from relevant helplines or support organizations in your region.</span>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="div-img">
+                <img src="istockphoto-1170461091-612x612.jpg" alt="">
+            </div>
+        </section>
+
+
+        <section>
+            <div>
+                <h2>Rating</h2>
+                <p>Before entering the exhibition, we would ask you to rate the following messages according to their hatefulness.</p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZQKk5Z7MjPFx2AYguHrYS0jBBy_2qQNHbedQSzBoYCGODww/viewform?embedded=true" width="640" height="644" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>How do people define hate?</h2>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/90Vvx_dXopQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+
+        <section>
+            <div>
+                <h2>Victims of digital hate</h2>
+                <p>Digital hate targets individuals based on race, religion, gender, opinion, visibility, profession, and other arbitrary personal characteristics.
+                    It can have devastating effects on victims and can lead to emotional distress, anxiety, and depression. 
+                    It erodes self-esteem and can cause social isolation. 
+                    The constant barrage of hateful messages and online harassment can leave long-lasting psychological scars, impacting overall well-being and sense of safety.</p>
+
+                <p class="item-x1"><br/><br/><br/><br/><br/><br/><br/><br/><i>"Online hate feels worse because people can hide behind fake names. <br/>
+                    They say hurtful things without consequences. <br/>
+                    We need better ways to stop hate speech online."</i></p>
+
+                <p class="item-x2"><br/><i>"Digital hate affects not just me, but also the people I care about. It hurts to see them face abuse and hate online.<br/>
+                     We need to protect one another."</i></p>
+
+                <p class="item-x3"><br/><br/><br/><br/><br/><i>"Hate speech goes beyond the screen. <br/>
+                    It hurts my relationships, self-esteem, and sense of belonging. <br/>
+                    Words have power, and online hate leaves lasting wounds."</i></p>
+
+                <p class="item-x4"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><i>"Digital hate made me rethink how I use the internet. <br/>
+                    It's disheartening to see so much hate without consequences.<br/>
+                     We need rules to stop online hate."</i></p>
+
+                <p class="item-x5"><br/><br/><br/><i>"Online hate robbed me of my sense of security. The constant trolling and cyberbullying created a hostile environment."</i></p>
+
+                <p class="item-x6"><br/><br/><br/><br/><br/><br/><i>"Hate speech taught me the power of empathy and support. <br/>
+                    It's crucial to stand up against hate and provide a safe haven for those who are targeted."</i></p>
+
+        </section>
+
+        <section>
+            <div>
+                <h2>A brief history of hate</h2>
+                <p>The history of hate is a complex tapestry that spans civilizations and epochs, evolving alongside human societies. Hate has manifested in diverse forms throughout history, fueled by fear, ignorance, power dynamics, and deep-rooted biases.
+                    Across ancient civilizations, hate often emerged from differences in ethnicity, religion, and cultural practices, contributing to conflicts and animosities. As societies advanced, hate persisted through conquests, colonization, and the subjugation of indigenous peoples, perpetuating discrimination, violence, and systemic oppression.
+                    In more recent history, hate took on a chilling form during the Holocaust, where millions were targeted and systematically exterminated based on their identity. This stark atrocity serves as a somber reminder of the devastating consequences hate can unleash. <br/>
+                    <br/>
+                    Furthermore, the rise of digital platforms has given rise to new dimensions of hate. Online hate speech, fueled by anonymity and the amplification of extremist ideologies, has become prevalent. The internet provides a breeding ground for cyberbullying, targeted harassment, and the spread of hateful ideologies, posing significant challenges to online safety, inclusivity, and social cohesion.
+                    However, history also reveals inspiring resistance to hate. Civil rights movements, feminist struggles, and LGBTQ+ activism have challenged and dismantled systems of hate, fostering progress and advancing human rights.<br/>
+                    <br/>
+                    Today, hate continues to persist in various forms, both online and offline. Digital hate and hate speech pose new challenges, requiring proactive measures to combat discrimination, promote digital literacy, and foster a culture of tolerance and respect.
+                    Understanding the history of hate, including its digital manifestations, is vital in order to confront its pernicious legacy. By learning from the past, we can strive to build inclusive societies that reject hate, embrace diversity, and promote empathy and understanding for all.
+                     </p>   
+            </div>
+        </section>
+
+
+        <section>
+            <div>
+                <h2>How is hate dealt with in science?</h2>
+                <p>Science defines hate as a profound and intense emotion characterized by strong animosity, aversion, or hostility towards individuals, groups, or entities.<br/>
+                    In the context of digital hate, scientific research highlights the unique manifestations of hate in the digital realm. 
+                    Digital hate encompasses various forms, including hate speech, cyberbullying, online harassment, and the propagation of extremist ideologies through digital platforms. 
+                    Scientists examine the psychological, neurological, and social aspects of digital hate to understand its nature and impact. 
+                    Psychologically, digital hate involves negative emotions, aggression, and harmful intentions expressed through online channels. 
+                    Neurologically, studies suggest that the brain processes digital hate similarly to offline hate, activating regions associated with negative emotions and social cognition. 
+                    Socially, digital hate is influenced by societal norms, cultural factors, and online interactions, shaping attitudes and behaviors.<br/>
+                    Understanding the scientific dimensions of digital hate is crucial for developing effective strategies to combat its harmful effects and promote a safer and more inclusive online environment.</p>   
+            </div>
+        </section>
+
+        <section>
+            <div class="div-img">
+                <img src="istockphoto-1343315456-612x612.jpg" alt="">
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>How is hate dealt with in art?</h2>
+                <p>Art, in its diverse forms, has emerged as a potent force in grappling with the complexities of hate. 
+                    Through visual, textual, and performative means, artists have tackled this daunting subject with great impact. 
+                    Art serves as a documentation and witness, capturing the stark realities of hate and discrimination in a way that preserves history and raises awareness. 
+                    It confronts stereotypes and prejudices head-on, challenging societal biases through thought-provoking imagery and narratives. 
+                    Moreover, art amplifies the voices of marginalized communities, providing a platform for their stories, struggles, and resilience to be heard and acknowledged. <br/>
+                    <br/>
+                    By fostering empathy and connection, art invites viewers and audiences to experience the emotional depth of those affected by hate, forging pathways to understanding and compassion. 
+                    Art also fuels activism and social change, inspiring individuals to take action against hate through protest art, installations, and community engagement projects. 
+                    Furthermore, art offers a space for healing and catharsis, enabling both artists and audiences to process the pain associated with hate and transform it into something meaningful and empowering. 
+                    In these ways, art plays a pivotal role in addressing hate, promoting dialogue, and driving positive societal transformation.
+                    </p>   
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Hate & Visual Art</h2>
+                <p>Visual art engages with hate by capturing its raw emotions, exposing its destructive nature, and challenging societal biases. 
+                    It serves as a powerful medium to confront hate, provoke dialogue, and inspire empathy. 
+                    Through visual imagery, artists convey the impact of hate and its potential for transformation. What do you see? <br/>
+                    (1. <a href="https://fineartamerica.com/featured/1-my-dog-hates-it-when-i-swear-jennie-cooley.html" target="_blank">Jennie Cooley (2020)</a>,
+                    2. <a href="https://www.wikiart.org/de/bruce-nauman/life-death-love-hate-pleasure-pain-1983" target="_blank">Bruce Nauman (1983)</a>,
+                    3. <a href="https://fineartamerica.com/featured/the-answer-is-no-anastasiya-malakhova.html" target="_blank">Anastasiya Malakhova (2014)</a>,
+                    4. <a href="https://gened.as.virginia.edu/egmt-1530-hateinnany-fascism-antifascism-and-global-far-right" target="_blank">Jessica Hyde (2015)</a>,
+                    5. <a href="https://www.annexgalleries.com/inventory/detail/ARHA124/Art-Hazelwood/Beast-of-Hatred" target="_blank">Art Hazelwood (2007)</a>,
+                    6. <a href="https://jfl.ngo/en/hate-speech-in-eastern-syria-implications-and-mechanisms-of-confrontation/" target="_blank">unknown</a>,
+                    7. <a href="https://revistas.elheraldo.co/hey/aliento-de-dragon-opciones-para-evitarlo-110595" target="_blank">unknown</a>)
+                </p>
+
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner" style=" width:100%; height: 500px">
+                        <div class="carousel-item active">
+                            <img src="1-my-dog-hates-it-when-i-swear-jennie-cooley.jpg"
+                                alt="zeppelin" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="life-death-love-hate-pleasure-pain-1983.jpg"
+                                alt="Valves" class="d-block w-100" alt="Chicago" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="the-answer-is-no-anastasiya-malakhova.jpg"
+                                alt="Los Angeles" class="d-block w-100" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="istockphoto-482458920-612x612xxx.jpg"
+                                alt="Los Angeles" class="d-block w-100" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="The-Beast-of-Hate-by-Art-Hazelwood.jpg"
+                                alt="Los Angeles" class="d-block w-100" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Download.jpg"
+                                alt="Los Angeles" class="d-block w-100" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="1472475258754110600.jpg"
+                                alt="Los Angeles" class="d-block w-100" alt="New York" class="d-block w-100">
+                        </div>
+                    
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Hate & Sound</h2>
+                <p>Sound art engages with hate by using auditory elements to convey its emotional depth and challenge societal norms. 
+                    Through experimental techniques, layered compositions, and evocative sounds, sound art exposes the raw intensity of hate and its destructive impact. 
+                    It invites listeners to confront uncomfortable truths, fostering reflection, empathy, and a call for change.<br/>
+                    <br/>
+                    Close your eyes. What yo you hear?</p>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/IpZslviMy5M?list=OLAK5uy_mlMNvQ3x2VaCkcwkfXO6CyOw4EaIQMX7o" title="Hate Noise" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Hate & Poetry</h2>
+                <p>Poetry engages with hate by harnessing the power of language to confront, deconstruct, and transcend its destructive force. 
+                    Through vivid imagery, metaphor, and powerful emotions, poetry explores the complexities of hate, exposing its roots and consequences. 
+                    It offers a space for catharsis, empathy, and dialogue, encouraging healing, understanding, and the pursuit of a more compassionate world.</p>
+
+                <p class="item-1"><i>
+                    <a href="https://en.wikipedia.org/wiki/Fire_and_Ice_(poem)" target="_blank">Fire and Ice</a><br/>
+                    <br/>
+                    Some say the world will end in fire, <br/>
+                    Some say in ice.<br/>
+                    <br/>
+                    From what I've tasted of desire<br/>
+                    I hold with those who favour fire.<br/>
+                    <br/>
+                    But if it had to perish twice,<br/>
+                    I think I know enough of hate<br/>
+                    To say that for destruction ice<br/>
+                    Is also great<br/>
+                    And would suffice.<br/>
+                    <br/>
+                    Robert Frost</i>
+                </p>
+
+                <p class="item-2"><i>
+                    <a href="http://matthewkaberline.blogspot.com/2010/04/hatred-gwendolyn-bennett.html" target="_blank">Hatred</a><br/>
+                    <br/>
+                    I shall hate you<br/>
+                    Like a dart of singing steel<br/>
+                    Shot through still air<br/>
+                    At even-tide,<br/>
+                    Or solemnly<br/>
+                    As pines are sober<br/>
+                    When they stand etched<br/>
+                    Against the sky.<br/>
+                    Hating you shall be a game<br/>
+                    Played with cool hands<br/>
+                    And slim fingers.<br/>
+                    Your heart will yearn<br/>
+                    For the lonely splendor<br/>
+                    Of the pine tree<br/>
+                    While rekindled fires<br/>
+                    In my eyes<br/>
+                    Shall wound you like swift arrows.<br/>
+                    Memory will lay its hands<br/>
+                    Upon your breast<br/>
+                    And you will understand<br/>
+                    My hatred.<br/><br/>
+
+                    Gwendolyn Bennett</i></p>
+                
+                <p class="item-3"><i>
+                    <a href="https://www.poetryinternational.com/en/poets-poems/poems/poem/103-29451_I-hate-life-how-much-hate-Only" target="_blank">I hate life, how much hate. Only</a><br/>
+                    <br/>
+                    I hate life, how much hate. Only<br/>
+                    by your hearing has it bled to death. Alas, my index! Oh, yellow<br/>
+                    lemon! you will give me<br/>
+                    a minute of sea, life<br/>
+                    as if made of bird seeds, the earth<br/>
+                    that will not leave them deserted.<br/>
+                    Do not even find them, put them away in two little boxed, brother, as if<br/>
+                    for white girls<br/><br/>
+                
+                WASP (transl. Pablo Gervas)</i></p>
+        </section>
+
+        <section>
+            <div>
+                <h2>Hate & AI Art</h2>
+                <p>The relationship between hateful art and artificial intelligence (AI) is a complex and controversial one.
+                AI, as a technology, can be harnessed for various purposes, including the creation and dissemination of art. 
+                However, when it comes to hateful art, AI can amplify and facilitate the spread of harmful content. The images were 
+                created using <a href="https://huggingface.co/spaces/dalle-mini/dalle-mini" target="_blank">Dall E mini</a> using prompts such as "hateful art" or "hate art".
+                </p>
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner" style=" width:100%; height: 500px">
+                        <div class="carousel-item active">
+                            <img src="a1_1.png"
+                                alt="AI1" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="a1_2.png"
+                                alt="Valves" class="d-block w-100" alt="AI2" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="a1_3.png"
+                                alt="Los Angeles" class="d-block w-100" alt="AI3" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="a1_4.png"
+                                alt="Los Angeles" class="d-block w-100" alt="AI4" class="d-block w-100">
+                        </div>
+                    
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Countering digital hate</h2>
+                Society can take several actions to stop digital hate: promoting digital literacy, enforcing laws against online harassment, 
+                fostering inclusive online spaces, supporting organizations combating hate, fostering media literacy, empowering bystander intervention, 
+                and facilitating collaboration between stakeholders for comprehensive strategies against online hate. 
+                By combining these efforts, we can create a safer and more inclusive online environment for all. </br>
+                <img src= "Vital-Intervention-On-the-Supreme-Court-Order-against-Hate-Speech.jpg" width="600" height="400" frameborder="0" marginheight="0" marginwidth="0" vspace="20">
+
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Rating</h2>
+                <p>After getting familiar with the topic, we would ask you to rate the following messages according to their hatefulness.</p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdvGYcGjhs7a-H3df-emznjL9PDLffcB_QDA870zAyILTRFg/viewform?embedded=true" width="640" height="810" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h2>Reflection</h2>
+                <p>You have experienced hate through different artistic lenses. Take your time to reflect on what you just saw, read and felt. Please share your feelings with others in the
+                <a href="https://docs.google.com/document/d/1UhG0JP5BPm5nFJg_wOTyRdv2h5i7bO8Ex5fLHxEiCNI/edit?usp=sharing" target="_blank">Reflection Room</a>
+            .</p>
+            <IMG SRC="istockphoto-1369006765-612x612abc.jpg" width="600" height="400" frameborder="0" marginheight="0" marginwidth="0">.
+        </section>
+
+        <section>
+            <div>
+                <h2>Thank you</h2>
+                <p>for joining us in the exhibition, "Art Unveiling Hate: A Journey through Creative Expression." 
+                    If you encounter digital hate, please do not hesitate reporting it to official offices as described at the website of the
+                    <a href="https://www.bundeskanzleramt.gv.at/agenda/jugend/lebensqualitaet-und-miteinander/no-hate-speech.html" target="_blank">Bundeskanzleramt</a>
+                    or to NGOs such as
+                    <a href="https://www.rataufdraht.at/" target="_blank">Rat auf Draht</a>
+                    who can help you dealing with the consequences of it. </br>
+                    Through powerful artworks, we explored the complexities of hate and the transformative potential of art. 
+                    By challenging stereotypes, fostering empathy, and inspiring activism, the exhibition urged us to confront bias and work towards a more inclusive world. 
+                    Let us carry the lessons learned into our lives, striving to combat hate and promote understanding. 
+                    Thank you for being a part of this transformative experience.
+                </p>
+                    <IMG SRC="giphy.gif" width="600" height="400" frameborder="0" marginheight="0" marginwidth="0">.
+        </section>
+
+        <section>
+            <div>
+                <h2>Feedback</h2>
+                <p>How was your experience with the digital exhibition?</br>
+                    If you want to restart the exhibition, please click
+                    <a href="https://thomaskir.github.io/digex.io/" target="_blank">here</a>.
+                </p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd5u3ddtdfyAhLYP-moFYfJKVD8e2NWvG4UaXIl5-rHoUS0Fg/viewform?embedded=true" width="640" height="427" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <div class="backforward-btns">
+            <button class="zurueck-btn btn btn-primary btn-block" onclick="zurueck()"> <i class="fa-solid fa-chevron-left"></i></button>
+            <button class="weiter-btn btn btn-primary btn-block" onclick="weiter()"> <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        document.querySelector(".zurueck-btn").disabled = true;
+
+        function weiter() {
+            var sections = document.querySelectorAll("section");
+            var counter = 0;
+            sections.forEach((section, i) => {
+                if (sections.length - 2 === counter) {
+                    document.querySelector(".weiter-btn").disabled = true;
+                }else {
+                    document.querySelector(".weiter-btn").disabled = false;
+
+                }
+                if (sections.length > 0){
+                    document.querySelector(".zurueck-btn").disabled = false;
+                }
+                if (section.classList.contains("active")) {
+                    counter = i;
+                }
+       
+                
+            })
+            sections[counter].classList.remove("active");
+            sections[counter + 1].classList.add("active");
+        }
+        function zurueck() {
+            var sections = document.querySelectorAll("section");
+            var counter = null;
+            sections.forEach((section, i) => {
+                if ( counter === 1) {
+                    document.querySelector(".zurueck-btn").disabled = true;
+                }else{
+                    document.querySelector(".zurueck-btn").disabled = false;
+
+                }
+               
+                if (section.classList.contains("active")) {
+                    counter = i;
+                }
+                console.log("COUNTER", counter);
+                console.log("length", section.length)
+                if (!counter){
+                    document.querySelector(".weiter-btn").disabled = false;
+                }
+       
+                
+            })
+            console.log("active", counter)
+            sections[counter].classList.remove("active");
+            console.log(sections[counter + 1])
+            sections[counter - 1].classList.add("active");
+        }
+    </script>
+
+
+</body>
+
+</html>
